@@ -5,9 +5,8 @@
 
 .navbar{
     background-color: #f3f8f7;
-    height: 30vh;
+    height: 25vh;
     display: flex;
-
 }
 
 .logo{
@@ -17,15 +16,14 @@
 
 
 .logo img {
-    height: 30vh;
-    width: 30vh;
-    padding: 0vh;
+    height: 20vh;
+    width: 20vh;
+    padding: 2vh;
     margin-right: 10vh;
 }
 
 .navbar ul{
     display: flex;
-    
 }
 
 
@@ -43,15 +41,64 @@
   font-size: 16px;
 }
 
-.menu-web ul li a.active {
-  color: #007bff;
-}
-
 .main-list{
     padding: 5vh;
-    margin-left: 30vh;
+    margin-left: 20vh;
+    display: flex;
 }
 
+.icons{
+    display: flex;
+    gap: 2vh;
+    margin-left: 20vh;
+    font-size: 24px;
+}
+
+
+/* search icon ki css */
+
+.group {
+ display: flex;
+ line-height: 28px;
+ /* align-items: center;
+ position: relative; */
+ max-width: 25vh;
+ margin-top: -2vh;
+}
+
+.input {
+ width: 100%;
+ height: 40px;
+ line-height: 28px;
+ padding: 0 1rem;
+ padding-left: 2.5rem;
+ border: 2px solid transparent;
+ border-radius: 8px;
+ outline: none;
+ border-color: #4d8c8d;
+ background-color: #fff;
+ box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+ color: #0d0c22;
+ transition: .3s ease;
+}
+
+.input::placeholder {
+ color: #9e9ea7;
+}
+
+.login-btn{
+    margin-left: 5vh;
+}
+
+.login{
+    padding: 0vh;
+    width: 18vh;
+    background-color: #4d8c8d;
+    color: white;
+    font-size: 3vh;
+    height: 7vh;
+    margin-top: -2vh;
+}
 /* Mobile Menu Hidden by Default */
 .menu-mobile {
   display: none;
