@@ -1,7 +1,7 @@
 .category-product-card {
   background-color: transparent;
   transition: background-color 0.3s ease;
-  padding: 10px;
+  padding: 16px;
   border-radius: 8px;
   position: relative;
 }
@@ -24,8 +24,8 @@
 }
 
 .product-image {
-  width: 48vh;
-  height: 48vh;
+  width: 40vh;
+  height: 40vh;
   overflow: hidden;
 }
 
@@ -74,11 +74,13 @@
   align-items: center;
   gap: 4px;
   margin-top: 4px;
+  margin-left: 6vh;
 }
 
 .rating span {
   color: gold;
   font-size: 14px;
+  margin-left: 4vh;
 }
 
 .rating .rating-number {

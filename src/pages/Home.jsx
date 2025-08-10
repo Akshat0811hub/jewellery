@@ -5,6 +5,7 @@ import "../css/Home.css";
 import banner1 from "../assets/main-banner.webp";
 import banner3 from "../assets/main-banner3.webp";
 import banner2 from "../assets/main-banner2.webp";
+import banner4 from "../assets/main-banner4.webp";
 import leftArrow from "../assets/icons/left-arrow.png";
 import rightArrow from "../assets/icons/right-arrow.png";
 import ringImg from "../assets/Category/ring.jpg";
@@ -17,6 +18,12 @@ import BestSellerCard from "../components/bestSellerCard/Seller"; // <-- new imp
 import Ring1 from "../assets/Products/Ring/ring1.jpg"
 import Ring2 from "../assets/Products/Ring/ring2.jpg"
 import Ring3 from "../assets/Products/Ring/ring3.jpg"
+import Ring4 from "../assets/Products/Ring/ring4.jpg"
+import Ring5 from "../assets/Products/Ring/ring5.jpg"
+import earring1 from "../assets/Products/earrings/earrings1.jpg"
+import necklace1 from "../assets/Products/Necklace/necklace1.jpg"
+import necklace2 from "../assets/Products/Necklace/necklace2.jpg"
+
 
 const Home = () => {
   // Categories data
@@ -47,6 +54,41 @@ const Home = () => {
     {
       image: Ring3,
       title: "Description of ring3",
+      oldPrice: 5999,
+      newPrice: 4299,
+      description: "Luxury meets elegance in this bestseller.",
+    },
+    {
+      image: Ring4,
+      title: "Description of ring4",
+      oldPrice: 5999,
+      newPrice: 4299,
+      description: "Luxury meets elegance in this bestseller.",
+    },
+    {
+      image: Ring5,
+      title: "Description of ring5",
+      oldPrice: 5999,
+      newPrice: 4299,
+      description: "Luxury meets elegance in this bestseller.",
+    },
+    {
+      image: earring1,
+      title: "Description of earring1",
+      oldPrice: 5999,
+      newPrice: 4299,
+      description: "Luxury meets elegance in this bestseller.",
+    },
+    {
+      image: necklace1,
+      title: "Description of necklace1",
+      oldPrice: 5999,
+      newPrice: 4299,
+      description: "Luxury meets elegance in this bestseller.",
+    },
+    {
+      image: necklace2,
+      title: "Description of necklace2",
       oldPrice: 5999,
       newPrice: 4299,
       description: "Luxury meets elegance in this bestseller.",
@@ -155,6 +197,15 @@ const Home = () => {
             <BestSellerCard key={index} {...product} />
           ))}
         </div>
+        <div className="view-btn1">
+          <button className="view" onClick={() => setViewAll(!viewAll)}>
+            {viewAll ? "Show Less" : "View All Categories"}
+          </button>
+        </div>
+      </div>
+      <div className="banner">
+        <img src={banner4} alt="" />
+        <button>Show More</button>
       </div>
     </>
   );
