@@ -23,6 +23,8 @@ import Ring5 from "../assets/Products/Ring/ring5.jpg";
 import earring1 from "../assets/Products/earrings/earrings1.jpg";
 import necklace1 from "../assets/Products/Necklace/necklace1.jpg";
 import necklace2 from "../assets/Products/Necklace/necklace2.jpg";
+import lastingmemory1 from "../assets/lastingmemory1.jpg";
+import lastingmemory2 from "../assets/lastingmemory2.jpg";
 
 const Home = () => {
   // Categories data
@@ -202,6 +204,8 @@ const Home = () => {
           </button>
         </div>
       </div>
+
+      {/* Banner */}
       <div className="banner">
         <img src={bannerfinal} alt="" />
 
@@ -218,6 +222,28 @@ const Home = () => {
             point of using Lorem Ipsum.
           </p>
           <button>Show More</button>
+        </div>
+      </div>
+      {/* Lasting Memory */}
+
+      <div className="last-memory">
+        <div className="first-memory">
+          <img src={lastingmemory1} alt="" />
+          <p><span>
+            Creates Lasting Memories <br></br>of Each Occasion<br></br></span>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum.
+          </p>
+        </div>
+        <div className="first-memory">
+          <p><span>
+            Creates Lasting Memories <br></br>of Each Occasion<br></br></span>
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum.
+          </p>
+          <img src={lastingmemory2} alt="" />
         </div>
       </div>
     </>

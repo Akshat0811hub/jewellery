@@ -98,6 +98,7 @@
   height: 12vh;
 }
 
+/* Banner css */
 .banner {
   position: relative;
   width: 100%;
@@ -142,4 +143,34 @@
 .banner-content button:hover {
   background-color: #4d8c8d;
   color: white;
+}
+
+
+/* Lasting Memory */
+
+
+.last-memory{
+  background-color: #f3f8f7;
+  padding: 12vh;
+}
+
+.first-memory{
+  display: flex;
+}
+
+.first-memory span{
+  font-weight: 600;
+  font-size: 30px;
+  font-family: serif display;
+  line-height: 5%;
+}
+.first-memory p{
+  padding: 10vh;
+  margin-top: 32vh;
+  line-height: 205%;
+}
+
+.first-memory img{
+  height: 650px;
+  width: 563px;
 }
