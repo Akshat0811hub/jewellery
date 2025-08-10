@@ -174,3 +174,36 @@
   height: 650px;
   width: 563px;
 }
+
+.second-memory{
+  display: flex;
+  margin-top: -12vh
+}
+
+.second-memory span{
+  font-weight: 600;
+  font-size: 30px;
+  font-family: serif display;
+  line-height: 5%;
+}
+.second-memory p{
+  padding: 10vh;
+  margin-top: 32vh;
+  line-height: 205%;
+}
+
+.second-memory img{
+  height: 650px;
+  width: 563px;
+  margin-top: 12vh;
+}
+
+.view {
+  margin-top: -40px; /* p ke niche thoda gap */
+  padding: 10px 20px;
+  border: 1px solid #4a6765;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 10vh;
+}
+

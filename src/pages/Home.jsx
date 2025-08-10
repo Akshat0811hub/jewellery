@@ -229,20 +229,34 @@ const Home = () => {
       <div className="last-memory">
         <div className="first-memory">
           <img src={lastingmemory1} alt="" />
-          <p><span>
-            Creates Lasting Memories <br></br>of Each Occasion<br></br></span>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-            The point of using Lorem Ipsum.
-          </p>
+          <div>
+            <p>
+              <span>
+                Creates Lasting Memories <br />
+                of Each Occasion
+                <br />
+              </span>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum.
+            </p>
+            <button className="view">Read More</button>
+          </div>
         </div>
-        <div className="first-memory">
-          <p><span>
-            Creates Lasting Memories <br></br>of Each Occasion<br></br></span>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout.
-            The point of using Lorem Ipsum.
-          </p>
+
+        <div className="second-memory">
+          <div>
+            <p>
+              <span>
+                We Provide the Best and Most Luxurious Designer Diamond
+                Jewellery <br />
+              </span>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum.
+            </p>
+            <button className="view">Read More</button>
+          </div>
           <img src={lastingmemory2} alt="" />
         </div>
       </div>
