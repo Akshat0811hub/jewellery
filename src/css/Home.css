@@ -83,39 +83,63 @@
 
 .sellerCard{
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 4 per row */
-  gap: 20px; /* spacing between cards */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; 
   margin-top: 20px;
 }
 
 .view-btn1{
   margin-top: 5vh;
+  height: 8vh;
+}
+
+.view{
+  padding: 2vh;
+  height: 12vh;
 }
 
 .banner {
-  position: relative; /* so the button positions relative to banner */
-  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-top: 8vh;
 }
 
 .banner img {
-  display: block;
   width: 100%;
   height: auto;
+  display: block;
 }
 
-.banner button {
+.banner-content {
   position: absolute;
-  top: 20px;   /* upar se distance */
-  left: 20px;  /* left se distance */
-  background-color: rgba(0, 0, 0, 0.6);
+  top: 50%; 
+  left: 20%; 
+  transform: translate(-50%, -50%); /* perfect centering */
   color: white;
-  border: none;
+  text-align: left;
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.banner-content button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.banner button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.banner-content button:hover {
+  background-color: #4d8c8d;
+  color: white;
 }

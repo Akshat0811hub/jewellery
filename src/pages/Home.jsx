@@ -5,7 +5,7 @@ import "../css/Home.css";
 import banner1 from "../assets/main-banner.webp";
 import banner3 from "../assets/main-banner3.webp";
 import banner2 from "../assets/main-banner2.webp";
-import banner4 from "../assets/main-banner4.webp";
+import bannerfinal from "../assets/bannerfinal.jpg";
 import leftArrow from "../assets/icons/left-arrow.png";
 import rightArrow from "../assets/icons/right-arrow.png";
 import ringImg from "../assets/Category/ring.jpg";
@@ -15,15 +15,14 @@ import engagementImg from "../assets/Category/engagementRings.jpg";
 import earringsImg from "../assets/Category/earrings.jpg";
 import CategoryCard from "../components/catCard/CategoryCard";
 import BestSellerCard from "../components/bestSellerCard/Seller"; // <-- new import
-import Ring1 from "../assets/Products/Ring/ring1.jpg"
-import Ring2 from "../assets/Products/Ring/ring2.jpg"
-import Ring3 from "../assets/Products/Ring/ring3.jpg"
-import Ring4 from "../assets/Products/Ring/ring4.jpg"
-import Ring5 from "../assets/Products/Ring/ring5.jpg"
-import earring1 from "../assets/Products/earrings/earrings1.jpg"
-import necklace1 from "../assets/Products/Necklace/necklace1.jpg"
-import necklace2 from "../assets/Products/Necklace/necklace2.jpg"
-
+import Ring1 from "../assets/Products/Ring/ring1.jpg";
+import Ring2 from "../assets/Products/Ring/ring2.jpg";
+import Ring3 from "../assets/Products/Ring/ring3.jpg";
+import Ring4 from "../assets/Products/Ring/ring4.jpg";
+import Ring5 from "../assets/Products/Ring/ring5.jpg";
+import earring1 from "../assets/Products/earrings/earrings1.jpg";
+import necklace1 from "../assets/Products/Necklace/necklace1.jpg";
+import necklace2 from "../assets/Products/Necklace/necklace2.jpg";
 
 const Home = () => {
   // Categories data
@@ -204,8 +203,22 @@ const Home = () => {
         </div>
       </div>
       <div className="banner">
-        <img src={banner4} alt="" />
-        <button>Show More</button>
+        <img src={bannerfinal} alt="" />
+
+        <div className="banner-content">
+          <h1>
+            Creates Lasting Memories
+            <br /> of Each occasion
+          </h1>
+          <p>
+            It is a long established fact that a reader will be distracted by{" "}
+            <br />
+            the readable content of a page when looking at its layout. The{" "}
+            <br />
+            point of using Lorem Ipsum.
+          </p>
+          <button>Show More</button>
+        </div>
       </div>
     </>
   );
