@@ -26,6 +26,7 @@
   margin-left: 2vh;
 }
 
+
 .main-categories h1{
   font-family: inter sans-serif;
   font-weight: 700;
@@ -58,3 +59,30 @@
   color: white;
   background-color: #4d8c8d;
 }
+
+
+
+/* Best Category  */
+
+
+.best-category img{
+  width: 5vh;
+  height: 5vh;
+  margin-left: 2vh;
+}
+
+.best-category{
+  display: flex;
+  padding: 8vh;
+}
+
+.best-para{
+  margin-top: -8vh;
+  margin-left: 8vh;
+}
+
+.sellerCard{
+  display: flex;
+  padding: 8vh;
+}
+

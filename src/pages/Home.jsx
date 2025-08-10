@@ -2,21 +2,21 @@ import React, { useEffect, useState } from "react";
 import Splide from "@splidejs/splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import "../css/Home.css";
-
 import banner1 from "../assets/main-banner.webp";
 import banner3 from "../assets/main-banner3.webp";
 import banner2 from "../assets/main-banner2.webp";
-
 import leftArrow from "../assets/icons/left-arrow.png";
 import rightArrow from "../assets/icons/right-arrow.png";
-
 import ringImg from "../assets/Category/ring.jpg";
 import braceletImg from "../assets/Category/bracelet.jpg";
 import necklaceImg from "../assets/Category/necklace.jpg";
 import engagementImg from "../assets/Category/engagementRings.jpg";
 import earringsImg from "../assets/Category/earrings.jpg";
-
 import CategoryCard from "../components/catCard/CategoryCard";
+import BestSellerCard from "../components/bestSellerCard/Seller"; // <-- new import
+import Ring1 from "../assets/Products/Ring/ring1.jpg"
+import Ring2 from "../assets/Products/Ring/ring2.jpg"
+import Ring3 from "../assets/Products/Ring/ring3.jpg"
 
 const Home = () => {
   // Categories data
@@ -26,6 +26,31 @@ const Home = () => {
     { image: necklaceImg, title: "Necklaces" },
     { image: engagementImg, title: "Engagement Rings" },
     { image: earringsImg, title: "Earrings" },
+  ];
+
+  // Best sellers data
+  const bestSellers = [
+    {
+      image: Ring1,
+      title: "Elegant Diamond Ring",
+      oldPrice: 4999,
+      newPrice: 3499,
+      description: "Our most-loved pick for special occasions.",
+    },
+    {
+      image: Ring2,
+      title: "Description of ring2",
+      oldPrice: 2999,
+      newPrice: 1999,
+      description: "Top-rated favorite — selling out fast!",
+    },
+    {
+      image: Ring3,
+      title: "Description of ring3",
+      oldPrice: 5999,
+      newPrice: 4299,
+      description: "Luxury meets elegance in this bestseller.",
+    },
   ];
 
   const [startIndex, setStartIndex] = useState(0);
@@ -113,6 +138,22 @@ const Home = () => {
           <button className="view" onClick={() => setViewAll(!viewAll)}>
             {viewAll ? "Show Less" : "View All Categories"}
           </button>
+        </div>
+      </div>
+
+      {/* Best Seller Product */}
+      <div className="best-seller">
+        <div className="best-category">
+          <h1>Bestseller Products</h1>
+        </div>
+        <p className="best-para">
+          Top-rated favorites you can’t resist — selling out fast!
+        </p>
+
+        <div className="sellerCard">
+          {bestSellers.map((product, index) => (
+            <BestSellerCard key={index} {...product} />
+          ))}
         </div>
       </div>
     </>
