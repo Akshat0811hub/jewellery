@@ -1,0 +1,33 @@
+.splide__slide img {
+  width: 100%;
+  height: 60vh;
+}
+
+.main-categories{
+  display: flex;
+  padding: 8vh;
+}
+
+.main-categories img{
+  width: 5vh;
+  height: 5vh;
+  margin-left: 2vh;
+}
+
+.main-categories h1{
+  font-family: inter sans-serif;
+  font-weight: 700;
+  size: 11px;
+}
+
+.cat-icons{
+  margin-left: 135vh;
+}
+
+.categories-section {
+  display: flex;
+  gap: 20px;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  padding: 40px;
+}
