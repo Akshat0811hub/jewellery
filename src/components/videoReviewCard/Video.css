@@ -1,0 +1,18 @@
+.video-review-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-review-card video {
+  border-bottom: 1px solid #eee;
+}
+
+.review-section-inside {
+  padding: 15px;
+}

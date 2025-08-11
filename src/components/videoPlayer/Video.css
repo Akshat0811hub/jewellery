@@ -1,0 +1,37 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.video-controls button {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.video-controls button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

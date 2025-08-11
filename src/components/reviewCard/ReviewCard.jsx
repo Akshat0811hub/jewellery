@@ -15,12 +15,6 @@ const ReviewCard = ({ name, profession, review, image, rating = 5 }) => {
         fontFamily: "sans-serif",
       }}
     >
-      {/* Stars */}
-      <div style={{ marginBottom: "10px" }}>
-        {[...Array(rating)].map((_, i) => (
-          <FaStar key={i} color="#FFD700" size={18} />
-        ))}
-      </div>
 
       {/* Profile Section */}
       <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
@@ -38,11 +32,19 @@ const ReviewCard = ({ name, profession, review, image, rating = 5 }) => {
         <strong style={{ fontSize: "16px" }}>{name}</strong>
         <span style={{ fontSize: "14px", color: "#777" }}>{profession}</span>
       </div>
+      <div style={{ marginBottom: "10px" }}>
+        {[...Array(rating)].map((_, i) => (
+          <FaStar key={i} color="#FFD700" size={18} />
+        ))}
+      </div>
 
       {/* Review Text */}
       <p style={{ marginTop: "12px", fontSize: "14px", color: "#444" }}>
         "{review}"
       </p>
+      <div className="product-rating">
+        ⭐ {rating !== undefined && rating !== null ? rating.toFixed(1) : "0.0"} / 5
+      </div>
     </div>
   );
 };

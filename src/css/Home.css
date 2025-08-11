@@ -208,3 +208,11 @@
   margin-left: 10vh;
 }
 
+.reviews{
+  display: flex;
+  gap: 5vh;
+}
+
+.review-section{
+  padding: 8vh;
+}
