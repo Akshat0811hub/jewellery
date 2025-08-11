@@ -42,6 +42,7 @@ import lastingmemory2 from "../assets/lastingmemory2.jpg";
 
 import pic1 from "../assets/profile/profile1.jpg";
 
+
 const Home = () => {
   const categories = [
     { image: ringImg, title: "Rings" },
@@ -203,7 +204,7 @@ const Home = () => {
         <h1>Feelings of Our Happy Client’s</h1>
         <p>It is a long established fact that a reader will be distracted by the readable content.</p>
 
-        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap",marginTop:"8vh" }}>
+        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", marginTop:"8vh",  }}>
           <VideoReviewCard
             videoSrc={video5}
             name="Amit Sharma"

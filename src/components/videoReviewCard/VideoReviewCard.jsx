@@ -6,9 +6,6 @@ import "./Video.css";
 const VideoReviewCard = ({ videoSrc, name, profession, review, image, rating }) => {
   return (
     <div className="video-review-card">
-      <div className="video-section">
-        <VideoPlayer src={videoSrc} />
-      </div>
       <div className="review-section-card">
         <ReviewCard
           name={name}
@@ -17,6 +14,12 @@ const VideoReviewCard = ({ videoSrc, name, profession, review, image, rating }) 
           image={image}
           rating={rating}
         />
+      </div>
+      <div className="video-section">
+        <VideoPlayer src={videoSrc} />
+        <VideoPlayer src={videoSrc} />
+        <VideoPlayer src={videoSrc} />
+        <VideoPlayer src={videoSrc} />
       </div>
     </div>
   );

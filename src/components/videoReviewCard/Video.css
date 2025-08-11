@@ -15,4 +15,12 @@
 
 .review-section-inside {
   padding: 15px;
+  
+}
+
+.video-section{
+    display: flex;
+    flex-wrap: nowrap;   
+    gap: 2vh;
+    
 }
