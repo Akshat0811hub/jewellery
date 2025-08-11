@@ -1,5 +1,9 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import flexpay from "../../assets/icons/flexpay.png"
+import moneygurantee from "../../assets/icons/moneygurantee.png"
+import onlinesupport from "../../assets/icons/onlinesupport.png"
+import shipping from "../../assets/icons/shipping.png"
 import "../../css/Footer.css";
 
 const Footer = () => {
@@ -8,28 +12,28 @@ const Footer = () => {
       {/* Top Service Bar */}
       <div className="footer-top">
         <div className="service">
-          <img src="/icons/shipping.svg" alt="Free Shipping" />
+          <img src={shipping} alt="Free Shipping" />
           <div>
             <h4>Free Shipping</h4>
             <p>Free shipping for order above $150</p>
           </div>
         </div>
         <div className="service">
-          <img src="/icons/money.svg" alt="Money Guarantee" />
+          <img src={moneygurantee} alt="Money Guarantee" />
           <div>
             <h4>Money Guarantee</h4>
             <p>Within 30 days for an exchange</p>
           </div>
         </div>
         <div className="service">
-          <img src="/icons/support.svg" alt="Online Support" />
+          <img src={onlinesupport} alt="Online Support" />
           <div>
             <h4>Online Support</h4>
             <p>24 hours a day, 7 days a week</p>
           </div>
         </div>
         <div className="service">
-          <img src="/icons/payment.svg" alt="Flexible Payment" />
+          <img src={flexpay} alt="Flexible Payment" />
           <div>
             <h4>Flexible Payment</h4>
             <p>Pay with multiple credit cards</p>

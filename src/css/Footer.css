@@ -17,6 +17,11 @@
   max-width: 200px;
 }
 
+.service img{
+    width: 8vh;
+    height: 8vh;
+}
+
 .service h4 {
   margin: 0;
   font-weight: bold;
