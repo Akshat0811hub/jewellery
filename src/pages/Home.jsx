@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Splide from "@splidejs/splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import "../css/Home.css";
@@ -14,7 +14,7 @@ import necklaceImg from "../assets/Category/necklace.jpg";
 import engagementImg from "../assets/Category/engagementRings.jpg";
 import earringsImg from "../assets/Category/earrings.jpg";
 import CategoryCard from "../components/catCard/CategoryCard";
-import BestSellerCard from "../components/bestSellerCard/Seller"; // <-- new import
+import BestSellerCard from "../components/bestSellerCard/Seller";
 import Ring1 from "../assets/Products/Ring/ring1.jpg";
 import Ring2 from "../assets/Products/Ring/ring2.jpg";
 import Ring3 from "../assets/Products/Ring/ring3.jpg";
@@ -27,7 +27,6 @@ import lastingmemory1 from "../assets/lastingmemory1.jpg";
 import lastingmemory2 from "../assets/lastingmemory2.jpg";
 
 const Home = () => {
-  // Categories data
   const categories = [
     { image: ringImg, title: "Rings" },
     { image: braceletImg, title: "Bracelets" },
@@ -36,7 +35,6 @@ const Home = () => {
     { image: earringsImg, title: "Earrings" },
   ];
 
-  // Best sellers data
   const bestSellers = [
     {
       image: Ring1,
@@ -99,13 +97,23 @@ const Home = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [viewAll, setViewAll] = useState(false);
 
-  // Restore Splide carousel
+  const splideRef = useRef(null);
+
   useEffect(() => {
-    new Splide(".splide", {
+    const splideInstance = new Splide(".splide", {
       type: "loop",
       perPage: 1,
+      arrows: false,
+      drag: true,
+      pauseOnHover: false,
+      pauseOnFocus: false,
       autoplay: true,
-    }).mount();
+      interval: 5000, // 5 seconds
+    });
+
+    splideInstance.mount();
+
+    splideRef.current = splideInstance;
   }, []);
 
   const handleNext = () => {
@@ -178,7 +186,7 @@ const Home = () => {
         </div>
 
         <div className="view-btn">
-          <button className="view" onClick={() => setViewAll(!viewAll)}>
+          <button className="view1" onClick={() => setViewAll(!viewAll)}>
             {viewAll ? "Show Less" : "View All Categories"}
           </button>
         </div>
@@ -208,7 +216,6 @@ const Home = () => {
       {/* Banner */}
       <div className="banner">
         <img src={bannerfinal} alt="" />
-
         <div className="banner-content">
           <h1>
             Creates Lasting Memories
@@ -224,17 +231,15 @@ const Home = () => {
           <button>Show More</button>
         </div>
       </div>
-      {/* Lasting Memory */}
 
+      {/* Lasting Memory */}
       <div className="last-memory">
         <div className="first-memory">
           <img src={lastingmemory1} alt="" />
           <div>
             <p>
               <span>
-                Creates Lasting Memories <br />
-                of Each Occasion
-                <br />
+                Creates Lasting Memories <br /> of Each Occasion <br />
               </span>
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The

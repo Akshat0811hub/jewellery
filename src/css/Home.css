@@ -45,14 +45,14 @@
   padding: 40px;
 }
 
-.view{
-    padding: 0vh;
-    width: 35vh; 
+.view1{
+    padding: 2vh;
+    width: 48vh; 
     color: #4d8c8d;
     font-size: 3vh;
-    height: 7vh;
+    height: 16vh;
     margin-top: -2vh;
-    margin-left: 96vh;
+    margin-left: 80vh;
 }
 
 .view:hover{
@@ -91,6 +91,7 @@
 .view-btn1{
   margin-top: 5vh;
   height: 8vh;
+  margin-left: 80vh;
 }
 
 .view{
@@ -177,7 +178,7 @@
 
 .second-memory{
   display: flex;
-  margin-top: -12vh
+  margin-top: -12vh;
 }
 
 .second-memory span{
@@ -199,7 +200,7 @@
 }
 
 .view {
-  margin-top: -40px; /* p ke niche thoda gap */
+  margin-top: -px; /* p ke niche thoda gap */
   padding: 10px 20px;
   border: 1px solid #4a6765;
   background: transparent;
