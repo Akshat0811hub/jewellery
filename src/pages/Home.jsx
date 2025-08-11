@@ -203,7 +203,7 @@ const Home = () => {
         <h1>Feelings of Our Happy Client’s</h1>
         <p>It is a long established fact that a reader will be distracted by the readable content.</p>
 
-        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "20px", flexWrap: "wrap",marginTop:"8vh" }}>
           <VideoReviewCard
             videoSrc={video5}
             name="Amit Sharma"
