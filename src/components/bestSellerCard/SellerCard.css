@@ -94,3 +94,59 @@
   color: #ffa500; /* Golden star color */
   font-weight: 500;
 }
+
+
+/* 📱 Mobile View */
+@media (max-width: 768px) {
+  .category-product-card {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 24vh; /* छोटा size */
+    height: 24vh;
+  }
+
+  .product-title {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .product-prices {
+    gap: 6px;
+  }
+
+  .old-price {
+    font-size: 12px;
+  }
+
+  .new-price {
+    font-size: 14px;
+  }
+
+  .product-rating {
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    width: 20vh;
+    height: 20vh;
+  }
+
+  .product-title {
+    font-size: 13px;
+  }
+
+  .old-price,
+  .new-price {
+    font-size: 12px;
+  }
+}

@@ -216,3 +216,118 @@
 .review-section{
   padding: 8vh;
 }
+
+
+
+@media (max-width: 768px) {
+
+  /* Carousel height adjustment */
+  .splide__slide img {
+    height: 35vh;
+  }
+
+  /* Categories Section */
+  .main-categories {
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 2vh;
+  }
+
+  .cat-icons {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .categories-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  .view-btn{
+    margin-left: 120px;
+  }
+  .view1 {
+    width: 200px;
+    margin: 2vh auto;
+    height: auto;
+    font-size: 2vh;
+  }
+
+  /* Best Seller Section */
+  .sellerCard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .view-btn1 {
+    margin: 2vh auto;
+    text-align: center;
+  }
+  .best-category h1{
+    margin-left: -30px;
+  }
+
+  .best-seller p{
+    margin-right: 10px;
+  }
+  /* Banner */
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .banner-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+
+  .view-btn1 {
+    margin: 2vh auto;
+    text-align: center;
+  }
+
+  /* Lasting Memory */
+  .last-memory {
+    padding: 4vh 2vh;
+  }
+
+  .first-memory,
+  .second-memory {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .first-memory img,
+  .second-memory img {
+    width: 100%;
+    height: auto;
+  }
+
+  .first-memory p,
+  .second-memory p {
+    padding: 2vh;
+    margin-top: 2vh;
+    line-height: 160%;
+  }
+
+  /* Reviews */
+  .reviews {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .review-section {
+    padding: 4vh 2vh;
+  }
+}

@@ -331,7 +331,7 @@ button:active {
     left: 0;
     padding: 20px;
     z-index: 999;
-    height: auto;
+    height: 670px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   .menu-mobile.show {
@@ -346,8 +346,9 @@ button:active {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 56px;
     align-items: center;
+    margin-top: 108px;
     padding: 0;
   }
 
