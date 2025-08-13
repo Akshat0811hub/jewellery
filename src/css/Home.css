@@ -273,53 +273,92 @@
   .best-seller p{
     margin-right: 10px;
   }
+
+  .view {
+    width: 200px;
+    margin: 2vh auto;
+    height: auto;
+    font-size: 2vh;
+    color: #4d8c8d;
+  }
   /* Banner */
+
+  .banner img{
+    height: 280px;
+  }
   .banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    /* position: absolute; */
+    top: 150px;
+    width: 300px;
+    left: 180px;
     transform: translate(-50%, -50%);
-    text-align: center;
+    text-align: left;
     padding: 0 10px;
   }
 
   .banner-content h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .banner-content p {
     font-size: 0.9rem;
   }
 
-  .view-btn1 {
-    margin: 2vh auto;
-    text-align: center;
-  }
-
-  /* Lasting Memory */
+  
+/* 📱 Mobile View - Lasting Memory */
+@media (max-width: 768px) {
   .last-memory {
     padding: 4vh 2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
   }
 
   .first-memory,
   .second-memory {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
 
+  /* Image full width */
   .first-memory img,
   .second-memory img {
     width: 100%;
     height: auto;
+    order: 1; /* image first */
+  }
+
+  /* Text after image */
+  .first-memory div,
+  .second-memory div {
+    order: 2;
+    padding: 2vh;
   }
 
   .first-memory p,
   .second-memory p {
-    padding: 2vh;
     margin-top: 2vh;
+    font-size: 30px;
     line-height: 160%;
   }
+
+  .first-memory p span,
+  .second-memory p span{
+    font-size: 50px;
+  }
+
+  /* Read More button center */
+  .view3 {
+    width: 200px;
+    margin-left: 104px;
+    height: auto;
+    font-size: 2vh;
+    color: #4d8c8d;
+  }
+}
+
 
   /* Reviews */
   .reviews {

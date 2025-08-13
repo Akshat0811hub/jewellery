@@ -183,7 +183,7 @@ const Home = () => {
               <span>Creates Lasting Memories <br /> of Each Occasion <br /></span>
               It is a long established fact that a reader will be distracted by the readable content.
             </p>
-            <button className="view">Read More</button>
+            <button className="view3">Read More</button>
           </div>
         </div>
 
@@ -193,7 +193,7 @@ const Home = () => {
               <span>We Provide the Best and Most Luxurious Designer Diamond Jewellery <br /></span>
               It is a long established fact that a reader will be distracted by the readable content.
             </p>
-            <button className="view">Read More</button>
+            <button className="view3">Read More</button>
           </div>
           <img src={lastingmemory2} alt="" />
         </div>
