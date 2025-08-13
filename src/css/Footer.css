@@ -81,3 +81,53 @@
   font-size: 18px;
   cursor: pointer;
 }
+
+
+/* 📱 Mobile Responsive Footer */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .service img {
+    width: 6vh;
+    height: 6vh;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-newsletter .newsletter-input {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-newsletter input {
+    width: 100%;
+  }
+
+  .footer-newsletter button {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
