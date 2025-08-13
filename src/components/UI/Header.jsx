@@ -22,7 +22,7 @@ const Header = () => {
       </div>
 
       <div className="main-list">
-        <nav className={show ? "menu-mobile" : "menu-web"}>
+        <nav className={show ? "menu-mobile show" : "menu-web"}>
           <ul>
             <li>
               <NavLink to="/">Home</NavLink>
@@ -66,13 +66,15 @@ const Header = () => {
         <div className="login-btn">
           <NavLink to="/login">
             {/* <button className="login">Login</button> */}
-            <button className="button-52" role="button">Login</button>
+            <button className="button-52" role="button">
+              Login
+            </button>
           </NavLink>
         </div>
 
-        <div className="ham-menu">
+        <div className={`ham-menu ${show ? "menu-open" : ""}`}>
           <button onClick={handleButtonToggle}>
-            <GiHamburgerMenu />
+            {show ? "" : <GiHamburgerMenu />}
           </button>
         </div>
       </div>
