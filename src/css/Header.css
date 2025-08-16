@@ -127,14 +127,12 @@ button:active {
   border: none;
 }
 
+/* @media (max-width: 768px) {
 
-@media (max-width: 768px) {
-  /* Web menu hide */
   .menu-web {
     display: none;
   }
 
-  /* Hamburger left side, no hover effects */
   .ham-menu {
     display: block;
     font-size: 28px;
@@ -150,7 +148,6 @@ button:active {
     cursor: pointer;
   }
 
-  /* Cross icon toggle */
   .ham-menu.menu-open button::before {
     content: "✖";
     font-size: 28px;
@@ -159,7 +156,6 @@ button:active {
     display: none;
   }
 
-  /* Logo center me */
   .logo {
     margin: 0 auto;
     display: flex;
@@ -171,19 +167,17 @@ button:active {
     height: 100px;
   }
 
-  /* Search bar logo ke niche */
 .group {
   width: 350px;
   margin-top: 100px;
-  margin-left: -50px;   /* left space ko auto karega */
-  margin-right: -150px;     /* right me chipka dega */
+  margin-left: -50px;   
+  margin-right: -150px;    
 }
 
 .input {
   width: 100%;
 }
 
-  /* Mobile menu hamburger ke neeche */
   .menu-mobile {
     display: none;
     width: 100%;
@@ -203,7 +197,6 @@ button:active {
     gap: 25px;
   }
 
-  /* Menu links */
   .menu-mobile ul {
     list-style: none;
     display: flex;
@@ -221,14 +214,12 @@ button:active {
     font-size: 16px;
   }
 
-  /* Heart & cart visible in mobile */
   .heart-wrapper,
   .cart-wrapper {
     display: block !important;
     font-size: 26px;
   }
 
-  /* Icons right side */
   .icons {
     flex-direction: col;
     gap: 15px;
@@ -244,7 +235,7 @@ button:active {
     display: flex;
     font-size: 20px;
     position: relative;
-    left: -80px; /* isse thoda left aayega */
+    left: -80px; 
   }
 
   .button-52 {
@@ -254,5 +245,156 @@ button:active {
     justify-content: center;
     align-items: center;
     height: 50px;
+  }
+} */
+@media (max-width: 768px) {
+  /* Web menu hide */
+  .menu-web {
+    display: none;
+  }
+
+  /* Hamburger */
+  .ham-menu {
+    display: block;
+    font-size: 5vw;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    position: absolute;
+    left: 3vw;
+    top: 3vh;
+  }
+  .ham-menu button {
+    all: unset;
+    cursor: pointer;
+  }
+  .ham-menu.menu-open button::before {
+    content: "✖";
+    font-size: 5vw;
+  }
+  .ham-menu.menu-open button svg {
+    display: none;
+  }
+
+  /* Logo smaller + center */
+  .logo {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3vw;
+  }
+  .logo img {
+    width: 15vw;   /* 60px → responsive */
+    height: auto;
+  }
+
+  /* Search bar logo ke niche */
+  .group {
+    width: 40vw;   /* 30vh → vw */
+    margin: 0 auto; /* center align */
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh; /* 16vh thoda adjust */
+    position: relative;
+    left: 10vw;    /* 7rem → vw */
+    transform: translateX(0);
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  /* Mobile menu hamburger ke neeche */
+  .menu-mobile {
+    display: none;
+    width: 100%;
+    background-color: #c2fff3;
+    position: absolute;
+    top: 15vh;   /* 12vh → responsive */
+    left: 0;
+    padding: 7vh 0; /* 5vh → responsive */
+    z-index: 999;
+    height: auto;
+    min-height: 80vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .menu-mobile.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+  }
+
+  /* Menu links */
+  .menu-mobile ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-mobile ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 2.5vw;  /* 2.2vh → vw */
+  }
+
+  /* Heart & cart */
+  .heart-wrapper,
+  .cart-wrapper {
+    display: block !important;
+    font-size: 5vw;
+  }
+
+  /* ✅ Icons + Login ek hi line me */
+  .icons,
+  .login-btn {
+    display: flex;
+    align-items: center;
+    gap: 6vw;  /* 8vw → thoda adjust */
+  }
+
+  .icons-login-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    position: absolute;
+    top: -4vh;
+    right: 3vw;
+    font-size: 5vw;
+  }
+
+  .icons {
+    position: absolute;
+    top: -4vh;
+    right: 65vw; /* 64vw → thoda adjust */
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    font-size: 5vw;
+    margin-left: -10vw; /* -8rem → vw */
+  }
+
+  .login-btn {
+    order: 2;
+    background-color: #41c7ac;
+    height: 5vh;   /* 4vh → responsive */
+    padding: 1vh 2vw; /* 0.5rem 1rem → responsive */
+    font-size: 2vw;  /* 2vh → vw */
+    margin-left: -3vw; /* -1rem → vw */
+  }
+
+  .button-52 {
+    font-size: 2vw;
+    padding: 1vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* 1rem fix hata diya */
   }
 }
