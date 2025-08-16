@@ -247,7 +247,7 @@ button:active {
     height: 50px;
   }
 } */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   /* Web menu hide */
   .menu-web {
     display: none;
@@ -291,13 +291,13 @@ button:active {
 
   /* Search bar logo ke niche */
   .group {
-    width: 40vw;   /* 30vh → vw */
+    width: 60vw;   /* 30vh → vw */
     margin: 0 auto; /* center align */
     display: flex;
     justify-content: center;
     margin-top: 20vh; /* 16vh thoda adjust */
     position: relative;
-    left: 10vw;    /* 7rem → vw */
+    left: 30vw;    /* 7rem → vw */
     transform: translateX(0);
   }
 
@@ -371,8 +371,8 @@ button:active {
 
   .icons {
     position: absolute;
-    top: -4vh;
-    right: 65vw; /* 64vw → thoda adjust */
+    top: -6vh;
+    right: 60vw; /* 64vw → thoda adjust */
     display: flex;
     align-items: center;
     gap: 2vw;
@@ -384,7 +384,7 @@ button:active {
     order: 2;
     background-color: #41c7ac;
     height: 5vh;   /* 4vh → responsive */
-    padding: 1vh 2vw; /* 0.5rem 1rem → responsive */
+    padding: 0.5rem ; /* 0.5rem 1rem → responsive */
     font-size: 2vw;  /* 2vh → vw */
     margin-left: -3vw; /* -1rem → vw */
   }
@@ -396,5 +396,6 @@ button:active {
     justify-content: center;
     align-items: center;
     height: auto; /* 1rem fix hata diya */
+    width: auto;
   }
 }
