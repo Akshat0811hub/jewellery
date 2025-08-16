@@ -352,9 +352,7 @@ body {
     margin-left: 0;
   }
   
-  .group {
-    display: none; /* Hide search on mobile - can show in mobile menu */
-  }
+  
   
   .login-btn {
     margin-left: 10px;
