@@ -55,7 +55,8 @@ img {
 /* ==================== CATEGORIES SECTION ==================== */
 .categories {
   padding: 60px 0;
-  background-color: var(--white);
+  color: white;
+  background-color: #163832;
 }
 
 .main-categories {
