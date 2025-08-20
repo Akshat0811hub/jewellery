@@ -14,8 +14,9 @@ const Header = () => {
 
   // Shop categories and their subcategories
   const shopCategories = {
-    All:{
-        name: "All Products"
+    All: {
+      name: "All Products",
+      path: "/categories/cat", // Fixed route for All Products
     },
     rings: {
       name: "Rings",
@@ -158,6 +159,11 @@ const Header = () => {
     setActiveSubDropdown(activeSubDropdown === category ? null : category);
   };
 
+  const closeAllDropdowns = () => {
+    setShopDropdown(false);
+    setActiveSubDropdown(null);
+  };
+
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -235,7 +241,6 @@ const Header = () => {
                 <NavLink to="/shop" activeClassName="active">
                   Shop <FaCaretDown className={shopDropdown ? "rotated" : ""} />
                 </NavLink>
-                
               </div>
 
               {/* Desktop Dropdown Menu */}
@@ -245,24 +250,36 @@ const Header = () => {
                     {Object.entries(shopCategories).map(([key, category]) => (
                       <div key={key} className="dropdown-item-container">
                         <div className="dropdown-item">
-                          <div
-                            className="category-link"
-                            onClick={() => handleSubDropdownToggle(key)}
-                          >
-                            <NavLink to={`/shop/${key}`}>
-                              {category.name}
-                            </NavLink>
-                            {category.subcategories && (
-                              <FaCaretRight 
-                                className={`submenu-arrow ${
-                                  activeSubDropdown === key ? "rotated" : ""
-                                }`} 
-                              />
-                            )}
-                          </div>
+                          {/* Special handling for "All Products" */}
+                          {key === 'All' ? (
+                            <div className="category-link">
+                              <NavLink 
+                                to="/categories/cat"
+                                onClick={closeAllDropdowns}
+                              >
+                                {category.name}
+                              </NavLink>
+                            </div>
+                          ) : (
+                            <div
+                              className="category-link"
+                              onClick={() => handleSubDropdownToggle(key)}
+                            >
+                              <NavLink to={`/shop/${key}`}>
+                                {category.name}
+                              </NavLink>
+                              {category.subcategories && (
+                                <FaCaretRight 
+                                  className={`submenu-arrow ${
+                                    activeSubDropdown === key ? "rotated" : ""
+                                  }`} 
+                                />
+                              )}
+                            </div>
+                          )}
 
-                          {/* Nested Submenu */}
-                          {activeSubDropdown === key && category.subcategories && (
+                          {/* Nested Submenu - Only show for categories with subcategories */}
+                          {activeSubDropdown === key && category.subcategories && key !== 'All' && (
                             <div className="submenu">
                               {category.subcategories.map((subcategory, index) => (
                                 <div key={index} className="submenu-item">
@@ -271,10 +288,7 @@ const Header = () => {
                                       .toLowerCase()
                                       .replace(/\s+/g, "-")}`}
                                     className="submenu-link"
-                                    onClick={() => {
-                                      setShopDropdown(false);
-                                      setActiveSubDropdown(null);
-                                    }}
+                                    onClick={closeAllDropdowns}
                                   >
                                     {subcategory}
                                   </NavLink>
@@ -385,38 +399,55 @@ const Header = () => {
                 <div className="mobile-submenu">
                   {Object.entries(shopCategories).map(([key, category]) => (
                     <div key={key} className="mobile-submenu-item">
-                      <div
-                        className="mobile-subcategory-header"
-                        onClick={() => handleSubDropdownToggle(key)}
-                      >
-                        <NavLink
-                          to={`/shop/${key}`}
-                          onClick={handleButtonToggle}
-                        >
-                          {category.name}
-                        </NavLink>
-                        <FaCaretRight
-                          className={`mobile-submenu-arrow ${
-                            activeSubDropdown === key ? "rotated" : ""
-                          }`}
-                        />
-                      </div>
-
-                      {activeSubDropdown === key && category.subcategories && (
-                        <div className="mobile-nested-submenu">
-                          {category.subcategories.map((subcategory, index) => (
-                            <div key={index} className="mobile-nested-item">
-                              <NavLink
-                                to={`/shop/${key}/${subcategory
-                                  .toLowerCase()
-                                  .replace(/\s+/g, "-")}`}
-                                onClick={handleButtonToggle}
-                              >
-                                {subcategory}
-                              </NavLink>
-                            </div>
-                          ))}
+                      {/* Special handling for "All Products" in mobile */}
+                      {key === 'All' ? (
+                        <div className="mobile-subcategory-header">
+                          <NavLink
+                            to="/categories/cat"
+                            onClick={handleButtonToggle}
+                          >
+                            {category.name}
+                          </NavLink>
                         </div>
+                      ) : (
+                        <>
+                          <div
+                            className="mobile-subcategory-header"
+                            onClick={() => handleSubDropdownToggle(key)}
+                          >
+                            <NavLink
+                              to={`/shop/${key}`}
+                              onClick={handleButtonToggle}
+                            >
+                              {category.name}
+                            </NavLink>
+                            {category.subcategories && (
+                              <FaCaretRight
+                                className={`mobile-submenu-arrow ${
+                                  activeSubDropdown === key ? "rotated" : ""
+                                }`}
+                              />
+                            )}
+                          </div>
+
+                          {/* Mobile nested submenu */}
+                          {activeSubDropdown === key && category.subcategories && (
+                            <div className="mobile-nested-submenu">
+                              {category.subcategories.map((subcategory, index) => (
+                                <div key={index} className="mobile-nested-item">
+                                  <NavLink
+                                    to={`/shop/${key}/${subcategory
+                                      .toLowerCase()
+                                      .replace(/\s+/g, "-")}`}
+                                    onClick={handleButtonToggle}
+                                  >
+                                    {subcategory}
+                                  </NavLink>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </>
                       )}
                     </div>
                   ))}

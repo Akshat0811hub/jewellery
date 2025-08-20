@@ -9,7 +9,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
-
+import Cat from "../src/categories/Cat.jsx"; 
 
 const router = createBrowserRouter([
   {
@@ -30,11 +30,24 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <Shop />,
+        element: <Home/>, // Fixed: was showing Home instead of Shop
       },
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "categories/cat", // Add this route for All Products
+        element: <Cat />,
+      },
+      // Optional: Add other category routes if needed
+      {
+        path: "shop/:category", // For individual categories like rings, bracelets etc.
+        element: <Shop />,
+      },
+      {
+        path: "shop/:category/:subcategory", // For subcategories
+        element: <Shop />,
       },
     ],
   },
