@@ -55,7 +55,7 @@ img {
 /* ==================== CATEGORIES SECTION ==================== */
 .categories {
   padding: 60px 0;
-  background-color: yellow;
+  background-color: #163832;
 }
 
 .main-categories {
@@ -64,12 +64,12 @@ img {
   align-items: center;
   margin-bottom: 40px;
   padding: 0 20px;
+  color: white;
 }
 
 .main-categories h1 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: var(--text-dark);
   margin: 0;
 }
 
@@ -106,6 +106,8 @@ img {
   margin-top: 40px;
 }
 
+
+
 .view1, .view {
   padding: 15px 40px;
   background-color: transparent;
@@ -118,6 +120,7 @@ img {
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 .view1:hover, .view:hover {
@@ -163,7 +166,7 @@ img {
 
 .view-btn1 {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 /* ==================== BANNER SECTION ==================== */
@@ -187,7 +190,7 @@ img {
   transform: translateY(-50%);
   color: var(--white);
   max-width: 600px;
-  padding: 20px;
+  padding: 30px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: var(--border-radius);
   backdrop-filter: blur(5px);
@@ -492,6 +495,11 @@ img {
     font-size: 1.5rem;
   }
   
+  .banner-content{
+    margin-top: -260px;
+    margin-right: 100px;
+    background-color: transparent;
+  }
   .banner-content p {
     display: none; /* Hide on very small screens for clarity */
   }

@@ -10,6 +10,7 @@ import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import Cat from "../src/categories/Cat.jsx"; 
+import ProductDetails from "./pages/ProductDetails"; 
 
 const router = createBrowserRouter([
   {
@@ -30,15 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <Home/>, // Fixed: was showing Home instead of Shop
+        element: <Cat />, 
       },
       {
         path: "contact",
         element: <Contact />,
       },
       {
-        path: "categories/cat", // Add this route for All Products
+        path: "categories/cat", // Route for All Products
         element: <Cat />,
+      },
+      {
+        path: "product/:id", // New route for product details
+        element: <ProductDetails />,
       },
       // Optional: Add other category routes if needed
       {
