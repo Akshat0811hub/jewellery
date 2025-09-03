@@ -90,7 +90,7 @@ img {
 
 .cat-icons img:hover {
   background-color: var(--primary-color);
-  transform: scale(1.1);
+  transform: scale(5.1);
 }
 
 .categories-section {
@@ -123,12 +123,12 @@ img {
   margin-top: 10px;
 }
 
-.view1:hover, .view:hover {
+/* .view1:hover, .view:hover {
   background-color: var(--primary-color);
   color: var(--white);
   transform: translateY(-2px);
   box-shadow: var(--shadow-medium);
-}
+} */
 
 /* ==================== BEST SELLER SECTION ==================== */
 .best-seller {

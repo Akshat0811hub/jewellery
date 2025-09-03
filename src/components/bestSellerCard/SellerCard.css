@@ -6,9 +6,9 @@
   position: relative;
 }
 
-.category-product-card:hover {
+/* .category-product-card:hover {
   background-color: #f8f8f8;
-}
+} */
 
 /* Best Seller badge */
 .badge {
@@ -38,6 +38,7 @@
 
 .category-product-card:hover .product-image img {
   transform: scale(1.05);
+  
 }
 
 .product-title {

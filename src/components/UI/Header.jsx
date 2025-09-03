@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../css/Header.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import logo1 from "../../assets/logo1.png";
-import { FaCaretDown, FaCaretRight } from "react-icons/fa";
+import { FaCaretDown, FaCaretRight, FaTimes } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { FiHeart, FiShoppingCart, FiSearch } from "react-icons/fi";
 
@@ -14,9 +14,8 @@ const Header = () => {
 
   // Shop categories and their subcategories
   const shopCategories = {
-    All: {
-      name: "All Products",
-      path: "/categories/cat", // Fixed route for All Products
+    all: {
+      name: "All Products"
     },
     rings: {
       name: "Rings",
@@ -150,7 +149,8 @@ const Header = () => {
     setShow(!show);
   };
 
-  const handleShopDropdownToggle = () => {
+  const handleShopDropdownToggle = (e) => {
+    e.preventDefault();
     setShopDropdown(!shopDropdown);
     setActiveSubDropdown(null); // Reset sub dropdown when main dropdown toggles
   };
@@ -160,6 +160,7 @@ const Header = () => {
   };
 
   const closeAllDropdowns = () => {
+    setShow(false);
     setShopDropdown(false);
     setActiveSubDropdown(null);
   };
@@ -167,10 +168,14 @@ const Header = () => {
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (show && !event.target.closest(".navbar")) {
+      const navbar = document.querySelector(".navbar");
+      const shopDropdownContainer = document.querySelector(".shop-dropdown-container");
+      
+      if (show && navbar && !navbar.contains(event.target)) {
         setShow(false);
       }
-      if (!event.target.closest(".shop-dropdown-container")) {
+      
+      if (shopDropdownContainer && !shopDropdownContainer.contains(event.target)) {
         setShopDropdown(false);
         setActiveSubDropdown(null);
       }
@@ -212,12 +217,13 @@ const Header = () => {
             onClick={handleButtonToggle}
             aria-label={show ? "Close menu" : "Open menu"}
             aria-expanded={show}
+            className="hamburger-btn"
           >
-            {show ? "" : <GiHamburgerMenu />}
+            {show ? <FaTimes /> : <GiHamburgerMenu />}
           </button>
         </div>
         <div className="logo">
-          <NavLink to="/" onClick={() => setShow(false)}>
+          <NavLink to="/" onClick={closeAllDropdowns}>
             <img src={logo1} alt="Logo" />
           </NavLink>
         </div>
@@ -228,17 +234,17 @@ const Header = () => {
         <nav className="menu-web">
           <ul>
             <li>
-              <NavLink to="/" activeClassName="active">
+              <NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>
                 Home
               </NavLink>
             </li>
             <li className="shop-dropdown-container">
-              <div
-                className="nav-link-with-icon"
-                onClick={handleShopDropdownToggle}
-                style={{ cursor: "pointer" }}
-              >
-                <NavLink to="/shop" activeClassName="active">
+              <div className="nav-link-with-icon">
+                <NavLink 
+                  to="/shop" 
+                  className={({ isActive }) => isActive ? "active" : ""}
+                  onClick={handleShopDropdownToggle}
+                >
                   Shop <FaCaretDown className={shopDropdown ? "rotated" : ""} />
                 </NavLink>
               </div>
@@ -250,43 +256,39 @@ const Header = () => {
                     {Object.entries(shopCategories).map(([key, category]) => (
                       <div key={key} className="dropdown-item-container">
                         <div className="dropdown-item">
-                          {/* Special handling for "All Products" */}
-                          {key === 'All' ? (
-                            <div className="category-link">
-                              <NavLink 
-                                to="/categories/cat"
-                                onClick={closeAllDropdowns}
-                              >
-                                {category.name}
-                              </NavLink>
-                            </div>
-                          ) : (
-                            <div
-                              className="category-link"
-                              onClick={() => handleSubDropdownToggle(key)}
+                          <div className="category-link">
+                            <NavLink 
+                              to={`/shop/${key}`}
+                              onClick={() => {
+                                if (!category.subcategories) {
+                                  closeAllDropdowns();
+                                } else {
+                                  handleSubDropdownToggle(key);
+                                }
+                              }}
                             >
-                              <NavLink to={`/shop/${key}`}>
-                                {category.name}
-                              </NavLink>
-                              {category.subcategories && (
-                                <FaCaretRight 
-                                  className={`submenu-arrow ${
-                                    activeSubDropdown === key ? "rotated" : ""
-                                  }`} 
-                                />
-                              )}
-                            </div>
-                          )}
+                              {category.name}
+                            </NavLink>
+                            {category.subcategories && (
+                              <FaCaretRight 
+                                className={`submenu-arrow ${
+                                  activeSubDropdown === key ? "rotated" : ""
+                                }`}
+                                onClick={() => handleSubDropdownToggle(key)}
+                              />
+                            )}
+                          </div>
 
-                          {/* Nested Submenu - Only show for categories with subcategories */}
-                          {activeSubDropdown === key && category.subcategories && key !== 'All' && (
+                          {/* Nested Submenu */}
+                          {activeSubDropdown === key && category.subcategories && (
                             <div className="submenu">
                               {category.subcategories.map((subcategory, index) => (
                                 <div key={index} className="submenu-item">
                                   <NavLink
                                     to={`/shop/${key}/${subcategory
                                       .toLowerCase()
-                                      .replace(/\s+/g, "-")}`}
+                                      .replace(/\s+/g, "-")
+                                      .replace(/[^\w-]/g, "")}`}
                                     className="submenu-link"
                                     onClick={closeAllDropdowns}
                                   >
@@ -304,17 +306,17 @@ const Header = () => {
               )}
             </li>
             <li>
-              <NavLink to="/about" activeClassName="active">
+              <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
                 About Us
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blog" activeClassName="active">
+              <NavLink to="/blog" className={({ isActive }) => isActive ? "active" : ""}>
                 Blog
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" activeClassName="active">
+              <NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>
                 Contact Us
               </NavLink>
             </li>
@@ -340,6 +342,11 @@ const Header = () => {
             role="button"
             tabIndex="0"
             aria-label="Wishlist"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                // Handle wishlist action
+              }
+            }}
           >
             <FiHeart className="icon" />
           </div>
@@ -348,6 +355,11 @@ const Header = () => {
             role="button"
             tabIndex="0"
             aria-label="Shopping Cart"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                // Handle cart action
+              }
+            }}
           >
             <FiShoppingCart className="icon" />
           </div>
@@ -369,7 +381,7 @@ const Header = () => {
             <NavLink
               to="/"
               onClick={handleButtonToggle}
-              activeClassName="active"
+              className={({ isActive }) => isActive ? "active" : ""}
             >
               Home
             </NavLink>
@@ -380,13 +392,7 @@ const Header = () => {
                 className="mobile-category-header"
                 onClick={() => handleSubDropdownToggle("shop")}
               >
-                <NavLink
-                  to="/shop"
-                  className="nav-link-with-icon"
-                  activeClassName="active"
-                >
-                  Shop
-                </NavLink>
+                <span className="mobile-shop-link">Shop</span>
                 <FaCaretDown
                   className={`mobile-dropdown-arrow ${
                     activeSubDropdown === "shop" ? "rotated" : ""
@@ -399,55 +405,45 @@ const Header = () => {
                 <div className="mobile-submenu">
                   {Object.entries(shopCategories).map(([key, category]) => (
                     <div key={key} className="mobile-submenu-item">
-                      {/* Special handling for "All Products" in mobile */}
-                      {key === 'All' ? (
-                        <div className="mobile-subcategory-header">
-                          <NavLink
-                            to="/categories/cat"
-                            onClick={handleButtonToggle}
-                          >
-                            {category.name}
-                          </NavLink>
-                        </div>
-                      ) : (
-                        <>
-                          <div
-                            className="mobile-subcategory-header"
+                      <div className="mobile-subcategory-header">
+                        <NavLink
+                          to={`/shop/${key}`}
+                          onClick={() => {
+                            if (!category.subcategories) {
+                              handleButtonToggle();
+                            } else {
+                              handleSubDropdownToggle(key);
+                            }
+                          }}
+                        >
+                          {category.name}
+                        </NavLink>
+                        {category.subcategories && (
+                          <FaCaretRight
+                            className={`mobile-submenu-arrow ${
+                              activeSubDropdown === key ? "rotated" : ""
+                            }`}
                             onClick={() => handleSubDropdownToggle(key)}
-                          >
-                            <NavLink
-                              to={`/shop/${key}`}
-                              onClick={handleButtonToggle}
-                            >
-                              {category.name}
-                            </NavLink>
-                            {category.subcategories && (
-                              <FaCaretRight
-                                className={`mobile-submenu-arrow ${
-                                  activeSubDropdown === key ? "rotated" : ""
-                                }`}
-                              />
-                            )}
-                          </div>
+                          />
+                        )}
+                      </div>
 
-                          {/* Mobile nested submenu */}
-                          {activeSubDropdown === key && category.subcategories && (
-                            <div className="mobile-nested-submenu">
-                              {category.subcategories.map((subcategory, index) => (
-                                <div key={index} className="mobile-nested-item">
-                                  <NavLink
-                                    to={`/shop/${key}/${subcategory
-                                      .toLowerCase()
-                                      .replace(/\s+/g, "-")}`}
-                                    onClick={handleButtonToggle}
-                                  >
-                                    {subcategory}
-                                  </NavLink>
-                                </div>
-                              ))}
+                      {activeSubDropdown === key && category.subcategories && (
+                        <div className="mobile-nested-submenu">
+                          {category.subcategories.map((subcategory, index) => (
+                            <div key={index} className="mobile-nested-item">
+                              <NavLink
+                                to={`/shop/${key}/${subcategory
+                                  .toLowerCase()
+                                  .replace(/\s+/g, "-")
+                                  .replace(/[^\w-]/g, "")}`}
+                                onClick={handleButtonToggle}
+                              >
+                                {subcategory}
+                              </NavLink>
                             </div>
-                          )}
-                        </>
+                          ))}
+                        </div>
                       )}
                     </div>
                   ))}
@@ -459,7 +455,7 @@ const Header = () => {
             <NavLink
               to="/about"
               onClick={handleButtonToggle}
-              activeClassName="active"
+              className={({ isActive }) => isActive ? "active" : ""}
             >
               About Us
             </NavLink>
@@ -468,7 +464,7 @@ const Header = () => {
             <NavLink
               to="/blog"
               onClick={handleButtonToggle}
-              activeClassName="active"
+              className={({ isActive }) => isActive ? "active" : ""}
             >
               Blog
             </NavLink>
@@ -477,7 +473,7 @@ const Header = () => {
             <NavLink
               to="/contact"
               onClick={handleButtonToggle}
-              activeClassName="active"
+              className={({ isActive }) => isActive ? "active" : ""}
             >
               Contact Us
             </NavLink>
